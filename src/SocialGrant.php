@@ -88,7 +88,8 @@ class SocialGrant extends AbstractGrant
         $user = $this->provider->getUserByAccessToken(
             $this->getParameter(self::$providerParamName, $request),
             $this->getParameter('access_token', $request),
-            $client
+            $client,
+            $this->getParameter('jwt', $request, false)
         );
 
         if ($user instanceof Authenticatable) {

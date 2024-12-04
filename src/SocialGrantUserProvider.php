@@ -13,7 +13,8 @@ interface SocialGrantUserProvider
      * @param string $provider
      * @param string $accessToken
      * @param ClientEntityInterface $client
+     * @param ?string $jwt
      * @return Authenticatable|null
      */
-    public function getUserByAccessToken(string $provider, string $accessToken, ClientEntityInterface $client): ?Authenticatable;
+    public function getUserByAccessToken(string $provider, string $accessToken, ClientEntityInterface $client, ?string $jwt = null): ?Authenticatable;
 }
